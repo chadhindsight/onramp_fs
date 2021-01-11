@@ -4,13 +4,9 @@ class PostsController {
 
     public async viewAllPosts(req, res) {
         try {
-            // const sql = "SELECT * FROM users";
-            // const posts = await client.query(sql);
-            // console.log(posts)
-            // res.json({ posts });
             await postPool.query('SELECT * FROM posts', (error, results) => {
                 console.log(results.rows)
-                res.json(results.row)
+                res.json(results.rows)
                 // postPool.end()
             })
 
@@ -30,7 +26,7 @@ class PostsController {
 
     //@POST description: create a blog post
     public async createPost(req, res) {
-        postPool.query(`INSERT INTO posts (title, content, authorid, faveid) VALUES('New Jeans', 'Buy a loved some new jeans', 2,1)`, (error, results) => {
+        postPool.query(`INSERT INTO posts (title, content, authorid, faveid) VALUES('New Jeans', 'Buy a loved some new jeans', 2,1)`, [], (error, results) => {
             if (!error) console.log(results.rows)
             res.json(results.row)
         })
@@ -60,7 +56,7 @@ class PostsController {
     }
     // @GET description: view own posts by checking that author id matches current userID
     public async viewMyPosts(request, response) {
-        postPool.query('SELECT * FROM posts WHERE authorid=2', (error, results) => {
+        postPool.query(`SELECT * FROM posts WHERE authorid=${request.user.id}`, (error, results) => {
             if (!error) console.log(results.rows)
         })
     }
