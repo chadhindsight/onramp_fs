@@ -2,7 +2,7 @@
 
 ## Overview 🤖
 
-Congratulations for making it this far in the interview process for the Blend Apprenticeship!
+Congratulations for making it this far in the interview process for the Blend Apprenticeship
 
 This project seeks to better inform the Onramp team of your experience with programming as well as prepare you for your interview at Blend.
 
