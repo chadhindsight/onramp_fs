@@ -20,17 +20,18 @@ class UserController {
                 res.status(201).json({})
             } else {
                 userPool.query(
-                    `INSERT INTO users (name, email, passwordhash)
+                    `upda INTO users (name, email, passwordhash)
                 VALUES ($1, $2, $3)
-                RETURNING id, name`,
+                RETURNING name, email`,
                     [name, email, hashedPassword],
-                    (err, results) => {
+                    async (err, results) => {
                         if (err) {
                             res.send(err)
                             throw new Error(err)
                         }
-
+                        console.log(results.rows)
                         res.send(results.rows);
+                        // res.redirect to dashboard
                     }
                 );
             }
@@ -70,9 +71,14 @@ class UserController {
     }
 
 
-    // View user dashboard/profile
-    public async viewDash(req, res) {
+    // Update user info
+    public async updateUser(req, res) {
+        const { name, email, password } = req.body
+        let hashedPassword = await bcrypt.hash(password, 10)
 
+        // Allow a logged in user the ability to change name, email or pw
+        const user = await userPool.query(`UPDATE users SET name=$1, email = $2, passwordhash = $3 WHERE id = $4`,
+            [name, email, hashedPassword, req.user.id])
     }
 }
 

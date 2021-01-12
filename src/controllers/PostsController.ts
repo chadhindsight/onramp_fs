@@ -1,4 +1,5 @@
 import postPool from '../dbconfig/dbconnector';
+import SpecialReq from '../utils/reqDefinition';
 
 class PostsController {
 
@@ -16,9 +17,9 @@ class PostsController {
         }
     }
 
-    //@GET description: view a specific blog post by ID
+    //@GET description: view a specific blog post by title
     public async viewPost(req, res) {
-        postPool.query('SELECT * FROM posts WHERE id=1', (error, results) => {
+        await postPool.query('SELECT * FROM posts WHERE title=$1', [req.query.name], (error, results) => {
             if (!error) console.log(results.rows)
             res.json(results.row)
         })
@@ -33,31 +34,37 @@ class PostsController {
 
     }
 
-    public async updatePost(request, response) {
+    public async updatePost(req, res) {
         // In later iteration, check if title/content is null before updating
-        postPool.query(`UPDATE posts SET title='New Beans', content='Lets get some bean action going!' 
-            WHERE id=3`, (error, results) => {
+        postPool.query(`UPDATE posts SET title=$1, content=$2 
+            WHERE id=$3`, [req.body.title, req.body.content, req.params.id], (error, results) => {
             if (!error) console.log(results.rows)
         })
     }
 
     // @GET description: view favorited blogs posts
-    public async viewFavPosts(request, response) {
-        postPool.query(`SELECT * FROM posts WHERE faveid=1`, (error, results) => {
-            if (!error) console.log(results.rows)
+    public async viewFavPosts(req, res) {
+        postPool.query(`SELECT * FROM posts WHERE faveid=$1`, [req.user.id], (error, results) => {
+            if (!error) {
+                console.log(results.rows)
+                res.send(results.rows)
+            }
         })
     }
 
     //@DELETE description: remove/delete a post by id or title
-    deletePost = async (request, response) => {
-        postPool.query(`DELETE FROM posts WHERE id=1`, (error, results) => {
+    deletePost = async (req, res) => {
+        postPool.query(`DELETE FROM posts WHERE id=$1`, [req.params.id], (error, results) => {
             if (!error) console.log(results.rows)
         })
     }
     // @GET description: view own posts by checking that author id matches current userID
-    public async viewMyPosts(request, response) {
-        postPool.query(`SELECT * FROM posts WHERE authorid=${request.user.id}`, (error, results) => {
-            if (!error) console.log(results.rows)
+    public async viewMyPosts(req, res) {
+        postPool.query(`SELECT * FROM posts WHERE authorid=${req.user.id}`, (error, results) => {
+            if (!error) {
+                console.log(results.rows)
+                res.send(results.rows)
+            }
         })
     }
 }

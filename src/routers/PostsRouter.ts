@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import PostsController from '../controllers/PostsController';
 import { protect } from '../middleware/authMiddleware';
+import SpecialReq from '../utils/reqDefinition';
 
 const router = Router();
 const postsController = new PostsController();
@@ -11,10 +12,6 @@ router.route('/')
     .get(protect, postsController.viewFavPosts)
     .post(protect, postsController.createPost)
 
-router.route('/:id').get().delete().put()
-
-// router.get('/', (req, res) => {
-//     res.send('I hate myself:)')
-// })
+router.route('/:id').get().delete(protect, postsController.deletePost).put(protect, postsController.updatePost)
 
 export default router;

@@ -17,7 +17,7 @@ class Server {
     private config() {
         this.app.use(express.json())
         this.app.use(bodyParser.urlencoded({ extended: true }));
-        this.app.use(bodyParser.json({ limit: '1mb' })); // 100kb default
+        // this.app.use(bodyParser.json({ limit: '1mb' })); // 100kb default
     }
 
     private dbConnect() {

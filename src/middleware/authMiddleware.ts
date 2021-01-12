@@ -1,7 +1,9 @@
 import jwt from 'jsonwebtoken';
+import asyncHandler from 'express-async-handler'
 import userPool from '../dbconfig/dbconnector';
+import SpecialReq from '../utils/reqDefinition';
 
-const protect = async (req, res, next) => {
+const protect = asyncHandler(async (req: SpecialReq, res, next) => {
     let token
 
     if (
@@ -26,5 +28,6 @@ const protect = async (req, res, next) => {
         }
     }
 
-}
+})
+
 export { protect }
