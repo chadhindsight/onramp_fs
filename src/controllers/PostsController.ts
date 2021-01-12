@@ -1,5 +1,5 @@
 import postPool from '../dbconfig/dbconnector';
-import SpecialReq from '../utils/reqDefinition';
+// import SpecialReq from '../utils/reqDefinition';
 
 class PostsController {
 
@@ -35,7 +35,7 @@ class PostsController {
     }
 
     public async updatePost(req, res) {
-        // In later iteration, check if title/content is null before updating
+        // In later iterations check if title/content is null before updating
         postPool.query(`UPDATE posts SET title=$1, content=$2 
             WHERE id=$3`, [req.body.title, req.body.content, req.params.id], (error, results) => {
             if (!error) console.log(results.rows)
@@ -44,7 +44,7 @@ class PostsController {
 
     // @GET description: view favorited blogs posts
     public async viewFavPosts(req, res) {
-        postPool.query(`SELECT * FROM posts WHERE faveid=$1`, [req.user.id], (error, results) => {
+        postPool.query(`SELECT * FROM posts WHERE faveid=$1`, [req.params.id], (error, results) => {
             if (!error) {
                 console.log(results.rows)
                 res.send(results.rows)
@@ -54,13 +54,21 @@ class PostsController {
 
     //@DELETE description: remove/delete a post by id or title
     deletePost = async (req, res) => {
-        postPool.query(`DELETE FROM posts WHERE id=$1`, [req.params.id], (error, results) => {
-            if (!error) console.log(results.rows)
+        await postPool.query(`DELETE FROM posts WHERE id=$1`, [req.params.id], async (error, results) => {
+            if (!error) {
+                console.log('deleted!')
+                // console.log(results.rows)
+                const updatedList = await postPool.query(`SELECT * FROM posts`)
+                res.status(200).send(updatedList)
+            }
+            else {
+                res.status(401).send('Something went wrong. Sorry, try logging in or signing up!')
+            }
         })
     }
     // @GET description: view own posts by checking that author id matches current userID
     public async viewMyPosts(req, res) {
-        postPool.query(`SELECT * FROM posts WHERE authorid=${req.user.id}`, (error, results) => {
+        postPool.query(`SELECT id, title, content FROM posts WHERE authorid=$1`, [req.params.id], (error, results) => {
             if (!error) {
                 console.log(results.rows)
                 res.send(results.rows)

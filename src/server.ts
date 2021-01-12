@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import postsRouter from './routers/PostsRouter';
 import userRouter from './routers/UserRouter';
 import pool from './dbconfig/dbconnector';
+import cors from 'cors';
 
 class Server {
     private app;
@@ -16,8 +17,14 @@ class Server {
 
     private config() {
         this.app.use(express.json())
+        // this takes care of any cors that pop up locally
+        this.app.use(
+            cors({
+                credentials: true,
+                origin: ["http://localhost:3000", "https://care-dash.netlify.app"]
+            })
+        );
         this.app.use(bodyParser.urlencoded({ extended: true }));
-        // this.app.use(bodyParser.json({ limit: '1mb' })); // 100kb default
     }
 
     private dbConnect() {
