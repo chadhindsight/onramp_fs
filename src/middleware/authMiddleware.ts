@@ -14,7 +14,7 @@ const protect = asyncHandler(async (req: SpecialReq, res, next) => {
             token = req.headers.authorization.split(' ')[1]
 
             const decoded = jwt.verify(token, process.env.JWT_SECRET)
-
+            // Check users table for ID match
             req.user = await userPool.query(`SELECT * FROM users
             WHERE id = $1`, [decoded.id], () => {
                 console.log(decoded.id)
