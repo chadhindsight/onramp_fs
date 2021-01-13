@@ -21,7 +21,7 @@ class Server {
         this.app.use(
             cors({
                 credentials: true,
-                origin: ["http://localhost:3000", "https://care-dash.netlify.app"]
+                origin: ["http://localhost:3000", "https://thawing-peak-97282.herokuapp.com"]
             })
         );
         this.app.use(bodyParser.urlencoded({ extended: true }));

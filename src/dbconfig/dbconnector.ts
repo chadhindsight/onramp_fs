@@ -13,6 +13,7 @@ const pool = new Pool({
     port: process.env.PGPORT
 })
 
+
 // pool.connect() maybe?
 
 // DB QUERY

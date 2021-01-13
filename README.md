@@ -2,19 +2,9 @@
 
 ## Overview 🤖
 
-Congratulations for making it this far in the interview process for the Blend Apprenticeship
-
-This project seeks to better inform the Onramp team of your experience with programming as well as prepare you for your interview at Blend.
-
-You have seven days to complete this project. We expect those who have a moderate level of development experience to spend between 30 and 40 hours to design, implement, document, and submit the project to us. Depending on your level, it may take more or less time, so please plan accordingly.
-
 **The project is due on Wednesday, January 13 at 9:00am PST/12:00pm EST**
 
 #### Project Summary
-
-- Total time available to complete: 7 days
-- Due date/time: Wednesday, January 13 at 9:00am PST/12:00pm EST
-- Expected development time to complete: 30 - 40 hours
 
 ## Description and Details 🔎
 
@@ -41,10 +31,6 @@ At a minimum, your app should allow for users to be able to:
 - View all of their favorites.
 
 \*\*Note: you will need to detail where and how your app meets these requirements in your repository's README file when you submit your project.
-
-### Researching and Plagiarism
-
-You are actively encouraged to research the web, books, videos, or tutorials for this project. That said, we expect all code that is submitted to be your own (e.g. this project should NOT be completed with another person). That means that we expect each candidate to refrain from copying and/or pasting code into the project. If we find copied code in your project, we will have to disqualify you. Web and video resources are available at the end of this document.
 
 ## What we're looking for 🌟
 
@@ -107,10 +93,6 @@ Once you’ve submitted your project, you are expected to stop working on it. An
 
 ## Additional Resources
 
-### Onramp Resources:
-
-Please use the modules and resources in the [Blend Training Plan](https://www.onramp.io/training/5fce6ab55cd2a500174dc937) for resources and exercises on TypeScript and Version Control.
-
 ### Other Resources:
 
 - [Website Design & Development](https://envisionitagency.com/blog/2018/04/best-practices-for-web-development/)
@@ -118,3 +100,5 @@ Please use the modules and resources in the [Blend Training Plan](https://www.on
 - [Typescript Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
 - [Typescript Best Practices](https://engineering.zalando.com/posts/2019/02/typescript-best-practices.html)
 - [Separation of Concerns](https://youtu.be/VtF6aebWe58)
+
+https://thawing-peak-97282.herokuapp.com
