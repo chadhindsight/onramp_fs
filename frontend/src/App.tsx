@@ -11,14 +11,14 @@ function App() {
   return (
     <Router>
       <Header />
-      <Route />
-      <Route />
-      <Route />
+
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/dashboard" component={Dashboard} />
 
       {/* Post Routes */}
       <div className="App">
-        <AllPosts />
-        <Route />
+        <Route path="/" component={AllPosts} exact />
         <Route />
       </div>
 

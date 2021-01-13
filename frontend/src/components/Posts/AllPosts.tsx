@@ -32,7 +32,7 @@ const AllPosts = () => {
     const renderPosts = (blogPosts) => {
         return blogPosts?.map(post => {
             return (
-                <div key={post.id}>
+                <div key={post.id} className="posts">
                     <Post info={post} delete={deletePost} />
                 </div>
             )
