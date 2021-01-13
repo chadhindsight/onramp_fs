@@ -15,18 +15,21 @@ A custom middleware was created to handle user authentication but maybe using Pa
 
 On the frontend the app uses React created from the create-react-app boilerplate with typescript template extension. Additionally, routes on the frontend were handled with the React-Router-Dom package. Styling was done with bootstrap becuase it's layouts and stylings can be applied to a large range of situations and structures. Also, it can be good for cross platform support and general user accesibility when used in combination with a developers own additional styling, and scripting. UI components can be thought of as being a part of two categories:
 
-#### Post Related Components
+### Components related to Post activity
 
 Component that deals with interacting with posts(writing a post, searching, deleting). Here a user can create, read and delete from DB
 
-[view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic.png)
+<img src="https://raw.githubusercontent.com/chadhindsight/onramp_fs/main/photos/onramp_pic.png" width="600" alt="view of posts"/>
 
-#### User Dashboard/Profile
+### User Dashboard/Profile
 
 Componenets that deal with the profile and signing in(updating user info, etc).
-[view of the login page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic2.png)
 
-[view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic3.png)
+<img src="https://raw.githubusercontent.com/chadhindsight/onramp_fs/main/photos/onramp_pic2.png" width="600" alt="view of the login page"/>
+
+Minimal color pallete
+
+<img src="https://raw.githubusercontent.com/chadhindsight/onramp_fs/main/photos/onramp_pic3.png" width="600" alt="sign up"/>
 
 #### UI Design Intention
 
@@ -34,7 +37,8 @@ By given the site a minimal color pallete and fairly plain layout, this ensures 
 
 ### Submission
 
-Here is the link to the project [repository](https://github.com/chadhindsight/onramp_fs)
+Here is the link to the project [repository]
+(https://github.com/chadhindsight/onramp_fs)
 
 #### TODO:
 
