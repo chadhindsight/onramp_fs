@@ -6,7 +6,7 @@ This is a web application that allows a user to signup/login to a site, write a 
 
 ## Description and Details
 
-On the backend this app uses PostgreSQL for the database, and Node and Express for routing endpoints.
+On the backend this app uses PostgreSQL for the database, and Node, Typescript and Express for routing endpoints.
 A custom middleware was created to handle user authentication but maybe using Passport.js middleware would have been more streamlined. A fair amount of development time was spent working on just the middleware and perhaps using the third party Passport middleware would have been faster.
 
 1. DB structure - consists of two tables, one for users , and one for blog posts. Since one user can be the author of multiple posts, the user ID is referenced as the Foreign Key in posts table which can allow us to get all posts by that particular user.
