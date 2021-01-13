@@ -37,8 +37,7 @@ By given the site a minimal color pallete and fairly plain layout, this ensures 
 
 ### Submission
 
-Here is the link to the project [repository]
-(https://github.com/chadhindsight/onramp_fs)
+Here is the link to the project [repository](https://github.com/chadhindsight/onramp_fs)
 
 #### TODO:
 
