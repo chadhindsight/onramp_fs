@@ -13,22 +13,20 @@ A custom middleware was created to handle user authentication but maybe using Pa
 
 2. Controllers/Routes - The logic in charge of interactions with user data and post data are given their own dedicated set of controllers and routes
 
-3. Protect middleware
-
 On the frontend the app uses React created from the create-react-app boilerplate with typescript template extension. Additionally, routes on the frontend were handled with the React-Router-Dom package. Styling was done with bootstrap becuase it's layouts and stylings can be applied to a large range of situations and structures. Also, it can be good for cross platform support and general user accesibility when used in combination with a developers own additional styling, and scripting. UI components can be thought of as being a part of two categories:
 
 #### Post Related Components
 
-Component that deal with interacting with posts(writing a post, searching, deleting). Here a user can create, read and delete from DB
+Component that deals with interacting with posts(writing a post, searching, deleting). Here a user can create, read and delete from DB
 
-![view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic)
+![view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic.png)
 
 #### User Dashboard/Profile
 
 Componenets that deal with the profile and signing in(updating user info, etc).
-![view of the login page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic2)
+![view of the login page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic2.png)
 
-![view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic3)
+![view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic3.png)
 
 #### UI Design Intention
 
