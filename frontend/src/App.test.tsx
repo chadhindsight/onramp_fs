@@ -20,6 +20,5 @@ test('should have a form submit button', () => {
 test('should have a submit button', () => {
   render(<Signup />);
   const btn = screen.getByRole('button');
-  // expect(btn).toBeInTheDocument();
   expect(btn).toHaveAttribute('type');
 });  
