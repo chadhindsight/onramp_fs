@@ -19,14 +19,14 @@ On the frontend the app uses React created from the create-react-app boilerplate
 
 Component that deals with interacting with posts(writing a post, searching, deleting). Here a user can create, read and delete from DB
 
-![view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic.png)
+[view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic.png)
 
 #### User Dashboard/Profile
 
 Componenets that deal with the profile and signing in(updating user info, etc).
-![view of the login page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic2.png)
+[view of the login page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic2.png)
 
-![view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic3.png)
+[view of the signup page](https://github.com/chadhindsight/onramp_fs/tree/main/photos/onramp_pic3.png)
 
 #### UI Design Intention
 
