@@ -20,7 +20,7 @@ class UserController {
                 res.status(201).json({})
             } else {
                 userPool.query(
-                    `upda INTO users (name, email, passwordhash)
+                    `INSERT INTO users (name, email, passwordhash)
                 VALUES ($1, $2, $3)
                 RETURNING name, email`,
                     [name, email, hashedPassword],
