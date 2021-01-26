@@ -13,7 +13,7 @@ class PostsController {
 
 
         } catch (error) {
-            res.status(400).send(`${error} in butt`);
+            res.status(400).send(`${error} error. Please try again`);;
         }
     }
 
